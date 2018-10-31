@@ -25,7 +25,7 @@ import {
   PublisherBanner
 } from '@drivetribe/react-native-admob';
 
-import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet'
+import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
 type BannerExampleProps = {
   style?: ViewStyleProp,
