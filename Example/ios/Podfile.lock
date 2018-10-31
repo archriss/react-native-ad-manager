@@ -1,0 +1,105 @@
+PODS:
+  - boost-for-react-native (1.63.0)
+  - DoubleConversion (1.1.6)
+  - Folly (2016.10.31.00):
+    - boost-for-react-native
+    - DoubleConversion
+    - glog
+  - glog (0.3.5)
+  - Google-Mobile-Ads-SDK (7.35.1)
+  - react-native-admob (2.0.0-beta.5):
+    - Google-Mobile-Ads-SDK
+    - React/Core
+  - React/Core (0.57.4):
+    - yoga (= 0.57.4.React)
+  - React/CxxBridge (0.57.4):
+    - Folly (= 2016.10.31.00)
+    - React/Core
+    - React/cxxreact
+  - React/cxxreact (0.57.4):
+    - boost-for-react-native (= 1.63.0)
+    - Folly (= 2016.10.31.00)
+    - React/jschelpers
+    - React/jsinspector
+  - React/DevSupport (0.57.4):
+    - React/Core
+    - React/RCTWebSocket
+  - React/fishhook (0.57.4)
+  - React/jschelpers (0.57.4):
+    - Folly (= 2016.10.31.00)
+    - React/PrivateDatabase
+  - React/jsinspector (0.57.4)
+  - React/PrivateDatabase (0.57.4)
+  - React/RCTAnimation (0.57.4):
+    - React/Core
+  - React/RCTBlob (0.57.4):
+    - React/Core
+  - React/RCTImage (0.57.4):
+    - React/Core
+    - React/RCTNetwork
+  - React/RCTLinkingIOS (0.57.4):
+    - React/Core
+  - React/RCTNetwork (0.57.4):
+    - React/Core
+  - React/RCTText (0.57.4):
+    - React/Core
+  - React/RCTWebSocket (0.57.4):
+    - React/Core
+    - React/fishhook
+    - React/RCTBlob
+  - yoga (0.57.4.React)
+
+DEPENDENCIES:
+  - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
+  - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Google-Mobile-Ads-SDK
+  - react-native-admob (from `../../react-native-admob.podspec`)
+  - React/Core (from `../node_modules/react-native`)
+  - React/CxxBridge (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
+  - React/RCTAnimation (from `../node_modules/react-native`)
+  - React/RCTImage (from `../node_modules/react-native`)
+  - React/RCTLinkingIOS (from `../node_modules/react-native`)
+  - React/RCTNetwork (from `../node_modules/react-native`)
+  - React/RCTText (from `../node_modules/react-native`)
+  - React/RCTWebSocket (from `../node_modules/react-native`)
+  - yoga (from `../node_modules/react-native/ReactCommon/yoga/yoga.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - boost-for-react-native
+    - Google-Mobile-Ads-SDK
+
+EXTERNAL SOURCES:
+  DoubleConversion:
+    :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+  Folly:
+    :podspec: "../node_modules/react-native/third-party-podspecs/Folly.podspec"
+  glog:
+    :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  React:
+    :path: "../node_modules/react-native"
+  react-native-admob:
+    :podspec: "../../react-native-admob.podspec"
+  yoga:
+    :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
+
+CHECKOUT OPTIONS:
+  react-native-admob:
+    :commit: f8db0e6797efcda101e936e1bbe0c91d3f174a15
+    :git: "git@github.com:drivetribe/react-native-admob.git"
+
+SPEC CHECKSUMS:
+  boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
+  DoubleConversion: bb338842f62ab1d708ceb63ec3d999f0f3d98ecd
+  Folly: c89ac2d5c6ab169cd7397ef27485c44f35f742c7
+  glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
+  Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
+  React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
+  react-native-admob: 1477e8d98395d0084a08a1817a2126b54f22ac92
+  yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
+
+PODFILE CHECKSUM: b5f4fd8d27de5bd355aaf59862b4574d6554844d
+
+COCOAPODS: 1.5.3

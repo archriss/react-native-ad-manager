@@ -2,10 +2,11 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:3.2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,11 +15,81 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenLocal()
+        google()
         jcenter()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
     }
+
+    ext {
+        compileSdk = 28
+        buildTools = "28.0.3"
+        minSdk = 19
+        targetSdk = 28
+        supportLibraryVersion = '28.0.0'
+        playServicesBaseVersion = '16.0.1'
+        playServicesAdsVersion = '17.0.0'
+        okHttpVersion = '3.11.0'
+
+        def packageVersion = getVersionArray()
+        versionMajor = packageVersion[0]
+        versionMinor = packageVersion[1]
+        versionPatch = packageVersion[2]
+
+        reactNativeVersion = getReactNativeVersion()
+
+        keystoreProperties = new Properties()
+        if (rootProject.file('keystore.properties').exists()) {
+            keystoreProperties.load(new FileInputStream(rootProject.file('keystore.properties')))
+        }
+    }
+
+    project.configurations.all {
+        resolutionStrategy {
+            eachDependency { details ->
+                // Force all of the primary support libraries to use the same version.
+                def versionSelector = details.requested
+                if (versionSelector.group == 'com.android.support' && !versionSelector.name.contains('multidex')) {
+                    details.useVersion supportLibraryVersion
+                } else if (versionSelector.group == 'com.google.android.gms' && versionSelector.name == 'play-services-base') {
+                    details.useVersion playServicesBaseVersion
+                } else if (versionSelector.group == 'com.google.android.gms' && versionSelector.name == 'play-services-ads') {
+                    details.useVersion playServicesAdsVersion
+                } else if (versionSelector.group == 'com.facebook.react' && versionSelector.name == 'react-native') {
+                    details.useVersion reactNativeVersion
+                } else if (versionSelector.group == 'com.squareup.okhttp3') {
+                    details.useVersion okHttpVersion
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    group 'build'
+    delete rootProject.buildDir
+}
+
+import groovy.json.JsonSlurper
+
+def getPackageJson() {
+    def inputFile = new File(rootProject.projectDir, "../package.json")
+    return new JsonSlurper().parseText(inputFile.text)
+}
+
+def getPackageVersion() {
+    def packageJson = getPackageJson()
+    return packageJson["version"]
+}
+
+def getVersionArray() { // major [0], minor [1], patch [2]
+    def (major, minor, patch) = getPackageVersion().tokenize('.')
+    return [Integer.parseInt(major), Integer.parseInt(minor), Integer.parseInt(patch)] as int[]
+}
+
+def getReactNativeVersion() {
+    def packageJson = getPackageJson()
+    return packageJson.dependencies["react-native"].replace('^', '').replace('~', '')
 }

@@ -1,0 +1,28 @@
+platform :ios, '9.3'
+inhibit_all_warnings!
+
+target 'Example' do
+  pod 'yoga', :path => "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    "Core",
+    "CxxBridge",
+    "DevSupport",
+    "RCTAnimation",
+    "RCTImage",
+    "RCTLinkingIOS",
+    "RCTNetwork",
+    "RCTText",
+    "RCTWebSocket"
+  ]
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  
+  # Libs here
+  pod 'Google-Mobile-Ads-SDK'
+  pod 'react-native-admob', :podspec => '../../react-native-admob.podspec'
+end
+
+target 'ExampleTests' do
+  inherit! :search_paths
+end

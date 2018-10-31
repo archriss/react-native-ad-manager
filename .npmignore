@@ -1,8 +1,28 @@
-Example/
-android/.idea/
-android/android.iml
-android/RNAdMob.iml
-android/gradle/
-android/gradlew
-android/gradlew.bat
-android/local.properties
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+#
+/android/build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
+#
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
+
+
+/Example
+.eslintrc.json
+.flowconfig
+yarn.lock

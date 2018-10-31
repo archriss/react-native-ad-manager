@@ -1,15 +1,10 @@
 # OSX
+#
 .DS_Store
 
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
-## Build generated
+Pods/
 build/
-DerivedData
-
-## Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -19,54 +14,29 @@ DerivedData
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-
-## Other
 *.xccheckout
 *.moved-aside
-*.xcuserstate
-*.xcscmblueprint
-
-## Obj-C/Swift specific
+DerivedData
 *.hmap
 *.ipa
+*.xcuserstate
+project.xcworkspace
 
-# CocoaPods
+# Android/IntelliJ
 #
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+build/
+.idea
+.gradle
+local.properties
+*.iml
+
+# node.js
 #
-# Pods/
+node_modules/
+npm-debug.log
+yarn-error.log
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-Carthage/Build
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://github.com/fastlane/fastlane/blob/master/docs/Gitignore.md
-
-fastlane/report.xml
-fastlane/screenshots
-
-node_modules/**/*
-
-# Android
-android/.idea/
-android/android.iml
-android/RNAdMob.iml
-android/gradle/
-android/gradlew
-android/gradlew.bat
-android/local.properties
-Example/android/Example.iml
-Example/android/app/app.iml
-Example/.buckconfig
-Example/.vscode/
-Example/android/app/BUCK
+# BUCK
+buck-out/
+\.buckd/
+*.keystore
