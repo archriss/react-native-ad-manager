@@ -70,13 +70,15 @@ type State = {
   style: ?ViewStyleProp
 };
 
-class PublisherBanner extends Component<Props, State> {
-  static simulatorId: string
+const RNDFPBannerView = requireNativeComponent('RNDFPBannerView');
+
+export default class PublisherBanner extends Component<Props, State> {
+  static simulatorId: string = 'SIMULATOR'
   state = {
     style: null
   };
 
-  _bannerView: RNDFPBannerView;
+  _bannerView: typeof RNDFPBannerView;
 
   componentDidMount() {
     this.loadBanner();
@@ -113,6 +115,10 @@ class PublisherBanner extends Component<Props, State> {
     }
   };
 
+  setRef = (el: *) => {
+    this._bannerView = ((el: any): typeof RNDFPBannerView)
+  }
+
   render(): React$Element<*> {
     return (
       <RNDFPBannerView
@@ -121,17 +127,8 @@ class PublisherBanner extends Component<Props, State> {
         onSizeChange={this.handleSizeChange}
         onAdFailedToLoad={this.handleAdFailedToLoad}
         onAppEvent={this.handleAppEvent}
-        ref={el => (this._bannerView = el)}
+        ref={this.setRef}
       />
     );
   }
 }
-
-PublisherBanner.simulatorId = 'SIMULATOR';
-
-const RNDFPBannerView = requireNativeComponent(
-  'RNDFPBannerView',
-  PublisherBanner
-);
-
-export default PublisherBanner;
