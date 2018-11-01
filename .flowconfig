@@ -25,7 +25,10 @@
 .*/node_modules/immutable/dist/immutable.js.flow
 
 ; Ignore Android directory
-.*/android/app/build/.*
+.*/android/.*
+
+; Ignore example in root
+.*/Example/.*
 
 [include]
 

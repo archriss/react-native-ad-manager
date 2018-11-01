@@ -14,6 +14,8 @@ import { createErrorFromErrorData } from './utils';
 
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
+export type AdSizes = 'banner' | 'largeBanner' | 'mediumRectangle' | 'fullBanner' | 'leaderboard' | 'smartBannerPortrait' | 'smartBannerLandscape'
+
 type Props = {
   /**
    * DFP iOS library banner size constants
@@ -28,12 +30,12 @@ type Props = {
    *
    * banner is default
    */
-  adSize: string,
+  adSize: AdSizes,
 
   /**
    * Optional array specifying all valid sizes that are appropriate for this slot.
    */
-  validAdSizes: Array<string>,
+  validAdSizes: Array<AdSizes>,
 
   /**
    * DFP ad unit ID
@@ -44,6 +46,11 @@ type Props = {
    * Array of test devices. Use PublisherBanner.simulatorId for the simulator
    */
   testDevices: Array<string>,
+
+  /**
+   * Object of key value pairs that give additional targeting info
+   */
+  customTargeting: { [key: string]: string | Array<string> },
 
   onSizeChange: Function,
 
