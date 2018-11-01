@@ -7,7 +7,7 @@ PODS:
     - glog
   - glog (0.3.5)
   - Google-Mobile-Ads-SDK (7.35.1)
-  - react-native-admob (2.0.0-beta.5):
+  - react-native-admob (2.0.0):
     - Google-Mobile-Ads-SDK
     - React/Core
   - React/Core (0.57.4):
@@ -87,7 +87,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   react-native-admob:
-    :commit: f8db0e6797efcda101e936e1bbe0c91d3f174a15
+    :commit: 1e28ff7a02dabce712e7c568d68b63380f2ee7eb
     :git: "git@github.com:drivetribe/react-native-admob.git"
 
 SPEC CHECKSUMS:
@@ -97,7 +97,7 @@ SPEC CHECKSUMS:
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
-  react-native-admob: 1477e8d98395d0084a08a1817a2126b54f22ac92
+  react-native-admob: a05f6087593320ed6c3ae65ae144c178bed2e3c8
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
 PODFILE CHECKSUM: b5f4fd8d27de5bd355aaf59862b4574d6554844d
