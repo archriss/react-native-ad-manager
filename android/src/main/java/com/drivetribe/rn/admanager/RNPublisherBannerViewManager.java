@@ -1,4 +1,4 @@
-package com.sbugert.rnadmob;
+package com.drivetribe.rn.admanager;
 
 import android.content.Context;
 import android.support.annotation.Nullable;

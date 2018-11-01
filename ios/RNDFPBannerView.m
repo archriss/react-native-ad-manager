@@ -1,15 +1,9 @@
 #import "RNDFPBannerView.h"
 #import "RNAdMobUtils.h"
 
-#if __has_include(<React/RCTBridgeModule.h>)
 #import <React/RCTBridgeModule.h>
 #import <React/UIView+React.h>
 #import <React/RCTLog.h>
-#else
-#import "RCTBridgeModule.h"
-#import "UIView+React.h"
-#import "RCTLog.h"
-#endif
 
 #include "RCTConvert+GADAdSize.h"
 

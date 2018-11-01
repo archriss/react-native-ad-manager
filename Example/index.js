@@ -18,7 +18,7 @@ import {
   ScrollView
 } from 'react-native';
 
-import { PublisherBanner } from '@drivetribe/react-native-admob';
+import { PublisherBanner } from '@drivetribe/react-native-ad-manager';
 
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 

@@ -7,7 +7,7 @@ PODS:
     - glog
   - glog (0.3.5)
   - Google-Mobile-Ads-SDK (7.35.1)
-  - react-native-admob (2.0.0):
+  - react-native-ad-manager (0.0.1):
     - Google-Mobile-Ads-SDK
     - React/Core
   - React/Core (0.57.4):
@@ -54,7 +54,7 @@ DEPENDENCIES:
   - Folly (from `../node_modules/react-native/third-party-podspecs/Folly.podspec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - Google-Mobile-Ads-SDK
-  - react-native-admob (from `../../react-native-admob.podspec`)
+  - react-native-ad-manager (from `../../react-native-ad-manager.podspec`)
   - React/Core (from `../node_modules/react-native`)
   - React/CxxBridge (from `../node_modules/react-native`)
   - React/DevSupport (from `../node_modules/react-native`)
@@ -80,14 +80,14 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
   React:
     :path: "../node_modules/react-native"
-  react-native-admob:
-    :podspec: "../../react-native-admob.podspec"
+  react-native-ad-manager:
+    :podspec: "../../react-native-ad-manager.podspec"
   yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga/yoga.podspec"
 
 CHECKOUT OPTIONS:
-  react-native-admob:
-    :commit: 1e28ff7a02dabce712e7c568d68b63380f2ee7eb
+  react-native-ad-manager:
+    :commit: d228ce624dcbe142b4160bff39f7512466dd8598
     :git: "git@github.com:drivetribe/react-native-admob.git"
 
 SPEC CHECKSUMS:
@@ -97,9 +97,9 @@ SPEC CHECKSUMS:
   glog: e8acf0ebbf99759d3ff18c86c292a5898282dcde
   Google-Mobile-Ads-SDK: 151d5e87b4a0ae6d7d07e2cd8d55d1b41ea2e61e
   React: 1fe0eb13d90b625d94c3b117c274dcfd2e760e11
-  react-native-admob: a05f6087593320ed6c3ae65ae144c178bed2e3c8
+  react-native-ad-manager: ce48968f0c0ba879289413c78f0c109a6553976f
   yoga: b1ce48b6cf950b98deae82838f5173ea7cf89e85
 
-PODFILE CHECKSUM: b5f4fd8d27de5bd355aaf59862b4574d6554844d
+PODFILE CHECKSUM: 9e978cb14dcbdaa5bd55618c686e5b10e45c6b26
 
 COCOAPODS: 1.5.3

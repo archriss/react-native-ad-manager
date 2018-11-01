@@ -30,12 +30,12 @@ type Props = {
    *
    * banner is default
    */
-  adSize: AdSizes,
+  adSize?: AdSizes,
 
   /**
    * Optional array specifying all valid sizes that are appropriate for this slot.
    */
-  validAdSizes: Array<AdSizes>,
+  validAdSizes?: Array<AdSizes>,
 
   /**
    * DFP ad unit ID
@@ -45,24 +45,24 @@ type Props = {
   /**
    * Array of test devices. Use PublisherBanner.simulatorId for the simulator
    */
-  testDevices: Array<string>,
+  testDevices?: Array<string>,
 
   /**
    * Object of key value pairs that give additional targeting info
    */
-  customTargeting: { [key: string]: string | Array<string> },
+  customTargeting?: { [key: string]: string | Array<string> },
 
-  onSizeChange: Function,
+  onSizeChange?: Function,
 
   /**
    * DFP library events
    */
-  onAdLoaded: Function,
-  onAdFailedToLoad: Function,
-  onAdOpened: Function,
-  onAdClosed: Function,
-  onAdLeftApplication: Function,
-  onAppEvent: Function,
+  onAdLoaded?: Function,
+  onAdFailedToLoad?: Function,
+  onAdOpened?: Function,
+  onAdClosed?: Function,
+  onAdLeftApplication?: Function,
+  onAppEvent?: Function,
   style?: ViewStyleProp,
 };
 

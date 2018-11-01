@@ -2,7 +2,7 @@ require 'json'
 package = JSON.parse(File.read("package.json"))
 
 Pod::Spec.new do |s|
-  s.name         = "react-native-admob"
+  s.name         = "react-native-ad-manager"
   s.version      = package["version"]
   s.summary      = package["description"]
   s.requires_arc = true

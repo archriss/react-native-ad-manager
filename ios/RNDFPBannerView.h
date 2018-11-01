@@ -1,8 +1,4 @@
-#if __has_include(<React/RCTComponent.h>)
 #import <React/RCTView.h>
-#else
-#import "RCTView.h"
-#endif
 
 @import GoogleMobileAds;
 

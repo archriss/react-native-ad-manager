@@ -1,15 +1,9 @@
 #import "RNDFPBannerViewManager.h"
 #import "RNDFPBannerView.h"
 
-#if __has_include(<React/RCTBridge.h>)
 #import <React/RCTBridge.h>
 #import <React/RCTUIManager.h>
 #import <React/RCTEventDispatcher.h>
-#else
-#import "RCTBridge.h"
-#import "RCTUIManager.h"
-#import "RCTEventDispatcher.h"
-#endif
 
 @implementation RNDFPBannerViewManager
 

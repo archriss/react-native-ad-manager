@@ -1,15 +1,9 @@
-/* eslint-disable global-require */
+/**
+ * @flow
+ */
+
 module.exports = {
-  get AdMobBanner() {
-    return require('./RNAdMobBanner').default;
-  },
-  get AdMobInterstitial() {
-    return require('./RNAdMobInterstitial').default;
-  },
   get PublisherBanner() {
     return require('./RNPublisherBanner').default;
-  },
-  get AdMobRewarded() {
-    return require('./RNAdMobRewarded').default;
-  },
+  }
 };

@@ -20,7 +20,7 @@ target 'Example' do
   
   # Libs here
   pod 'Google-Mobile-Ads-SDK'
-  pod 'react-native-admob', :podspec => '../../react-native-admob.podspec'
+  pod 'react-native-ad-manager', :podspec => '../../react-native-ad-manager.podspec'
 end
 
 target 'ExampleTests' do

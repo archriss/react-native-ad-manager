@@ -1,6 +1,6 @@
 {
   "ignore_dirs": [
-    "node_modules/react-native-admob/node_modules",
-    "node_modules/react-native-admob/Example"
+    "node_modules/react-native-ad-manager/node_modules",
+    "node_modules/react-native-ad-manager/Example"
   ]
 }

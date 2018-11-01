@@ -1,5 +1,5 @@
 rootProject.name = 'Example'
 
 include ':app'
-include ':react-native-admob'
-project(':react-native-admob').projectDir = new File(rootProject.projectDir, '../../android')
+include ':react-native-ad-manager'
+project(':react-native-ad-manager').projectDir = new File(rootProject.projectDir, '../../android')

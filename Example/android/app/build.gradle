@@ -104,7 +104,7 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-admob')
+    implementation project(':react-native-ad-manager')
     implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.facebook.react:react-native:$reactNativeVersion"  // From node_modules
 }

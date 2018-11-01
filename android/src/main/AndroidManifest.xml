@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sbugert.rnadmob">
+          package="com.drivetribe.rn.admanager">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>
