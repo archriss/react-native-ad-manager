@@ -92,7 +92,7 @@ export default class PublisherBanner extends Component<Props, State> {
     );
   }
 
-  handleSizeChange = (event: *) => {
+  handleSizeChange = (event: { nativeEvent: { style: { width: number, height: number } } }) => {
     const { height, width } = event.nativeEvent;
     this.setState({ style: { width, height } });
     if (this.props.onSizeChange) {
@@ -100,14 +100,14 @@ export default class PublisherBanner extends Component<Props, State> {
     }
   };
 
-  handleAppEvent = (event: *) => {
+  handleAppEvent = (event: { nativeEvent: { name: string, info: string } }) => {
     if (this.props.onAppEvent) {
       const { name, info } = event.nativeEvent;
       this.props.onAppEvent({ name, info });
     }
   };
 
-  handleAdFailedToLoad = (event: { error: { message: string }}) => {
+  handleAdFailedToLoad = (event: { nativeEvent: { error: { message: string } } }) => {
     const { onAdFailedToLoad } = this.props
     if (onAdFailedToLoad) {
       onAdFailedToLoad(
