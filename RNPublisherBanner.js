@@ -92,7 +92,7 @@ export default class PublisherBanner extends Component<Props, State> {
     );
   }
 
-  handleSizeChange = (event: { nativeEvent: { style: { width: number, height: number } } }) => {
+  handleSizeChange = (event: { nativeEvent: { width: number, height: number } }) => {
     const { height, width } = event.nativeEvent;
     this.setState({ style: { width, height } });
     if (this.props.onSizeChange) {
