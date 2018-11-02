@@ -52,17 +52,17 @@ type Props = {
    */
   customTargeting?: { [key: string]: string | Array<string> },
 
-  onSizeChange?: Function,
+  onSizeChange?: (size: { width: number, height: number }) => void,
 
   /**
    * DFP library events
    */
-  onAdLoaded?: Function,
-  onAdFailedToLoad?: Function,
-  onAdOpened?: Function,
-  onAdClosed?: Function,
-  onAdLeftApplication?: Function,
-  onAppEvent?: Function,
+  onAdLoaded?: () => void,
+  onAdFailedToLoad?: (error: Error) => void,
+  onAdOpened?: () => void,
+  onAdClosed?: () => void,
+  onAdLeftApplication?: () => void,
+  onAppEvent?: (event: { name: ?string, info: ?string }) => void,
   style?: ViewStyleProp,
 };
 
@@ -107,9 +107,10 @@ export default class PublisherBanner extends Component<Props, State> {
     }
   };
 
-  handleAdFailedToLoad = (event: *) => {
-    if (this.props.onAdFailedToLoad) {
-      this.props.onAdFailedToLoad(
+  handleAdFailedToLoad = (event: { error: { message: string }}) => {
+    const { onAdFailedToLoad } = this.props
+    if (onAdFailedToLoad) {
+      onAdFailedToLoad(
         createErrorFromErrorData(event.nativeEvent.error)
       );
     }

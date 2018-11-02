@@ -1,9 +1,8 @@
-export const createErrorFromErrorData = (errorData) => {
-  const {
-    message,
-    ...extraErrorInfo
-  } = errorData || {};
-  const error = new Error(message);
-  error.framesToPop = 1;
-  return Object.assign(error, extraErrorInfo);
+/**
+ * @flow
+ */
+
+export function createErrorFromErrorData(errorData: { message: string }): Error {
+  const { message } = errorData || {};
+  return new Error(message);
 }
