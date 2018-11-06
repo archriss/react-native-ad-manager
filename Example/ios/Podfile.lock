@@ -87,7 +87,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   react-native-ad-manager:
-    :commit: 40c78f3f55c9011e9d8a7aa4c31eaccf51aafeff
+    :commit: 6f1b11efd28cffcba0c5192ab7ba6b08c503ff57
     :git: "git@github.com:drivetribe/react-native-ad-manager.git"
 
 SPEC CHECKSUMS:
