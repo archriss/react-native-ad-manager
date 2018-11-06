@@ -7,9 +7,9 @@
   "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
-    "url": "git@github.com:drivetribe/react-native-admob.git"
+    "url": "git@github.com:drivetribe/react-native-ad-manager.git"
   },
-  "homepage": "https://github.com/drivetribe/react-native-admob",
+  "homepage": "https://github.com/drivetribe/react-native-ad-manager",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow",

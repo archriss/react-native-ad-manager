@@ -18,7 +18,10 @@ import {
   ScrollView
 } from 'react-native';
 
-import { PublisherBanner } from '@drivetribe/react-native-ad-manager';
+import {
+  PublisherBanner,
+  MobileAds,
+} from '@drivetribe/react-native-ad-manager';
 
 import type { ViewStyleProp } from 'react-native/Libraries/StyleSheet/StyleSheet';
 
@@ -60,15 +63,37 @@ export default class Example extends Component<*, State> {
         <ScrollView>
           <BannerExample title="DFP - Multiple Ad Sizes">
             <PublisherBanner
+              style={{ height: 250 }}
               adSize="banner"
               validAdSizes={['mediumRectangle']}
               adUnitID="/6499/example/APIDemo/AdSizes"
-              customTargeting={{ testing: 'test', arrayTest: ['test', 'test2'] }}
+              customTargeting={{
+                testing: 'test',
+                arrayTest: ['test', 'test2']
+              }}
               ref={el => (this._adSizesExample = el)}
             />
             <Button
               title="Reload"
               onPress={() => this._adSizesExample.loadBanner()}
+            />
+            <Button
+              title="Open debug"
+              onPress={() =>
+                MobileAds.openDebugMenu('/6499/example/APIDemo/AdSizes')
+              }
+            />
+            <Button
+              title="setAppMuted"
+              onPress={() =>
+                MobileAds.setAppMuted(true)
+              }
+            />
+            <Button
+              title="setAppVolume"
+              onPress={() =>
+                MobileAds.setAppVolume(0.5)
+              }
             />
           </BannerExample>
           <BannerExample
