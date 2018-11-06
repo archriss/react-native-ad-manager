@@ -1,6 +1,10 @@
+#import "RNAdManagerMobileAds.h"
+
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/RCTBridge.h>
+
+@import GoogleMobileAds;
 
 @implementation RNAdManagerMobileAds
 @synthesize bridge = _bridge;
@@ -14,7 +18,7 @@ RCT_EXPORT_MODULE();
 
 RCT_EXPORT_METHOD(openDebugMenu:(nonnull NSString *)adUnitId) {
     GADDebugOptionsViewController *debugOptionsViewController = [GADDebugOptionsViewController debugOptionsViewControllerWithAdUnitID:adUnitId];
-    [self presentViewController:debugOptionsViewController animated:YES completion:nil];
+    [RCTPresentedViewController() presentViewController:debugOptionsViewController animated:YES completion:nil];
 }
 
 RCT_EXPORT_METHOD(setAppMuted:(bool *)muted) {
