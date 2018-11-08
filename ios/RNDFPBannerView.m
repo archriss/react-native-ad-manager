@@ -27,7 +27,7 @@
         UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
         UIViewController *rootViewController = [keyWindow rootViewController];
 
-        _bannerView = [[DFPBannerView alloc] initWithAdSize:kGADAdSizeMediumRectangle];
+        _bannerView = [[DFPBannerView alloc] init];
         _bannerView.delegate = self;
         _bannerView.adSizeDelegate = self;
         _bannerView.appEventDelegate = self;
@@ -75,12 +75,6 @@
 - (void)setCustomTargeting:(NSDictionary *)customTargeting
 {
     _customTargeting = customTargeting;
-}
-
--(void)layoutSubviews
-{
-    [super layoutSubviews];
-    _bannerView.frame = self.bounds;
 }
 
 # pragma mark GADBannerViewDelegate
