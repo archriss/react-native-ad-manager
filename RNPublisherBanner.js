@@ -33,6 +33,7 @@ type Props = {
   adSize?: AdSizes,
 
   /**
+   * DON'T USE. TODO: doesn't work as expected android/ios behaviour is not the same
    * Optional array specifying all valid sizes that are appropriate for this slot.
    */
   validAdSizes?: Array<AdSizes>,
