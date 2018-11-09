@@ -46,7 +46,9 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
     }
 
     private void createAdView() {
-        if (this.adView != null) this.adView.destroy();
+        if (this.adView != null) {
+            this.adView.destroy();
+        }
 
         final Context context = getContext();
         this.adView = new PublisherAdView(context);
@@ -134,20 +136,9 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
 
     @SuppressWarnings("unchecked")
     public void loadBanner() {
-        ArrayList<AdSize> adSizes = new ArrayList<>();
         if (this.adSize != null) {
-            adSizes.add(this.adSize);
+            this.adView.setAdSizes(this.adSize);
         }
-        if (this.validAdSizes != null) {
-            Collections.addAll(adSizes, this.validAdSizes);
-        }
-
-        if (adSizes.size() == 0) {
-            adSizes.add(AdSize.BANNER);
-        }
-
-        AdSize[] adSizesArray = adSizes.toArray(new AdSize[adSizes.size()]);
-        this.adView.setAdSizes(adSizesArray);
 
         PublisherAdRequest.Builder adRequestBuilder = new PublisherAdRequest.Builder();
         if (testDevices != null) {
@@ -171,6 +162,9 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
                     case Array:
                         ReadableArray arrayValue = this.customTargeting.getArray(key);
                         adRequestBuilder.addCustomTargeting(key, (List<String>) (Object) arrayValue.toArrayList());
+                        break;
+                    case Number:
+                        adRequestBuilder.addCustomTargeting(key, Integer.toString(this.customTargeting.getInt(key)));
                         break;
                     default:
                         break;
