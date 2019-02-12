@@ -88,7 +88,7 @@ export default class PublisherBanner extends Component<Props, State> {
   loadBanner() {
     UIManager.dispatchViewManagerCommand(
       findNodeHandle(this._bannerView),
-      UIManager.RNDFPBannerView.Commands.loadBanner,
+      UIManager.getViewManagerConfig('RNDFPBannerView').Commands.loadBanner,
       null
     );
   }
