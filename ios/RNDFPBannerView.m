@@ -50,6 +50,13 @@
     DFPRequest *request = [DFPRequest request];
     request.testDevices = _testDevices;
     request.customTargeting = _customTargeting;
+    
+    if ([_consentStatus isKindOfClass:[NSNumber class]]) {
+        GADExtras *extras = [[GADExtras alloc] init];
+        extras.additionalParameters = @{@"npa": [_consentStatus stringValue]};
+        [request registerAdNetworkExtras:extras];
+    }
+    
     [_bannerView loadRequest:request];
 }
 
@@ -76,6 +83,12 @@
 {
     _customTargeting = customTargeting;
 }
+
+- (void)setConsentStatus:(NSNumber *)consentStatus
+{
+    _consentStatus = consentStatus;
+}
+
 
 # pragma mark GADBannerViewDelegate
 
