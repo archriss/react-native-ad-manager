@@ -3,6 +3,7 @@ package com.drivetribe.rn.admanager;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.os.Bundle;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
@@ -19,6 +20,8 @@ import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.facebook.react.views.view.ReactViewGroup;
+
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.doubleclick.AppEventListener;
@@ -38,6 +41,7 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
     String adUnitID;
     AdSize adSize;
     ReadableMap customTargeting;
+    Integer consentStatus;
 
     public ReactPublisherAdView(final Context context) {
         super(context);
@@ -174,6 +178,15 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
             }
         }
 
+        if (this.consentStatus != null) {
+            // Create consent extra for non personalized ads
+            Bundle extras = new Bundle();
+            extras.putString("npa", String.valueOf(this.consentStatus));
+
+            // Add extra to request builder
+            adRequestBuilder.addNetworkExtrasBundle(AdMobAdapter.class, extras);
+        }
+
         PublisherAdRequest adRequest = adRequestBuilder.build();
         this.adView.loadAd(adRequest);
     }
@@ -204,6 +217,10 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
         this.customTargeting = customTargeting;
     }
 
+    public void setConsentStatus(Integer consentStatus) {
+        this.consentStatus = consentStatus;
+    }
+
     @Override
     public void onAppEvent(String name, String info) {
         WritableMap event = Arguments.createMap();
@@ -222,6 +239,7 @@ public class RNPublisherBannerViewManager extends ViewGroupManager<ReactPublishe
     public static final String PROP_AD_UNIT_ID = "adUnitID";
     public static final String PROP_TEST_DEVICES = "testDevices";
     public static final String PROP_CUSTOM_TARGETING = "customTargeting";
+    public static final String PROP_CONSENT_STATUS = "consentStatus";
 
     public static final String EVENT_SIZE_CHANGE = "onSizeChange";
     public static final String EVENT_AD_LOADED = "onAdLoaded";
@@ -302,6 +320,11 @@ public class RNPublisherBannerViewManager extends ViewGroupManager<ReactPublishe
         ReadableNativeArray nativeArray = (ReadableNativeArray) testDevices;
         ArrayList<Object> list = nativeArray.toArrayList();
         view.setTestDevices(list.toArray(new String[list.size()]));
+    }
+
+    @ReactProp(name = PROP_CONSENT_STATUS)
+    public void setPropConsentStatus(final ReactPublisherAdView view, final Integer consentStatus) {
+        view.setConsentStatus(consentStatus);
     }
 
     private AdSize getAdSizeFromString(String adSize) {
