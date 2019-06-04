@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.source_files = 'ios/**/*.{h,m}'
   s.platform     = :ios, "9.0"
   
-  s.dependency 'React/Core'
+  s.dependency 'React'
   s.dependency 'Google-Mobile-Ads-SDK'
 end
