@@ -1,6 +1,6 @@
 {
   "name": "@drivetribe/react-native-ad-manager",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A react-native component for Google Ad Manager banner",
   "author": "Simon Bugert <simon.bugert@gmail.com>, TRIBE IP",
   "main": "index.js",
