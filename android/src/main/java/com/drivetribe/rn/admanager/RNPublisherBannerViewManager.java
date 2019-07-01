@@ -26,7 +26,6 @@ import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -165,6 +164,9 @@ class ReactPublisherAdView extends ReactViewGroup implements AppEventListener {
                         break;
                     case Number:
                         adRequestBuilder.addCustomTargeting(key, Integer.toString(this.customTargeting.getInt(key)));
+                        break;
+                    case Boolean:
+                        adRequestBuilder.addCustomTargeting(key, Boolean.toString(this.customTargeting.getBoolean(key)));
                         break;
                     default:
                         break;
