@@ -10,15 +10,15 @@
     "check": "npm run lint && npm run flow"
   },
   "dependencies": {
-    "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.4",
+    "react": "16.8.3",
+    "react-native": "0.59.9",
     "@drivetribe/react-native-ad-manager": "file:../"
   },
   "devDependencies": {
-    "@babel/core": "7.1.0",
-    "metro-react-native-babel-preset": "0.48.1"
+    "@babel/core": "7.4.5",
+    "metro-react-native-babel-preset": "0.54.1"
   },
   "resolutions": {
-    "react": "16.6.0-alpha.8af6728"
+    "react": "16.8.3"
   }
 }

@@ -79,20 +79,27 @@ project.ext.react = [
 apply from: "../../node_modules/react-native/react.gradle"
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion compileSdk
+    buildToolsVersion buildTools
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.example"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion minSdk
+        targetSdkVersion targetSdk
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+        }
     }
     packagingOptions {
-        exclude 'lib/arm64-v8a/**.so'
-        exclude 'lib/armeabi/**.so'
-        exclude 'lib/x86_64/**.so'
+        pickFirst '**/libjsc.so'
+        pickFirst '**/libc++_shared.so'
     }
     buildTypes {
         release {
@@ -105,6 +112,5 @@ android {
 
 dependencies {
     implementation project(':react-native-ad-manager')
-    implementation "com.android.support:appcompat-v7:$supportLibraryVersion"
     implementation "com.facebook.react:react-native:$reactNativeVersion"  // From node_modules
 }
