@@ -51,7 +51,7 @@ type Props = {
   /**
    * Object of key value pairs that give additional targeting info
    */
-  customTargeting?: { [key: string]: string | Array<string> },
+  customTargeting?: { [key: string]: boolean | string | Array<string> },
 
   onSizeChange?: (size: { width: number, height: number }) => void,
 
